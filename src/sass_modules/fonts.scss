@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,600|Open+Sans:700&display=swap');
+@import './resolutions.scss';
+
+
+@mixin fontTextMixin {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+@mixin fontHeadersMixin {
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 23px;
+    line-height: 25px;
+    font-weight: 600;
+}
+
+.f-text {
+   @include fontTextMixin;
+}
+
+.f-text__semibold {
+    @include fontTextMixin;
+    font-weight: 600;
+}
+
+.f-h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.f-h2 {
+   @include fontHeadersMixin;
+}
+
+.f-h3 {
+    @include fontHeadersMixin;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+@media(min-width: $tablet) {
+    .f-h1 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .f-h2 {
+        font-size:28px;
+        line-height: 32px;
+    }
+
+    .f-h3 {
+        font-size: 22px;
+        line-height: 26px;
+    }
+}
+
+@media(min-width: $small-screen) {
+    .f-h2 {
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .f-h3 {
+        font-size: 28px;
+        line-height: 32px;
+    }
+}
+
+

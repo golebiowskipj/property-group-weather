@@ -1,0 +1,13 @@
+@import '../../../../sass_modules/all.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+@media(min-width: $tablet) {
+    .form {
+        flex-direction: row;
+        align-items: center;
+    }
+}

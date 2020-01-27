@@ -1,0 +1,27 @@
+@import '../../../sass_modules/all.scss';
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    width: 250px;
+    height: 40px;
+    text-transform: uppercase;
+    box-shadow: none;
+    border: 1px solid $blue;
+    color: $white;
+    background: $blue;
+    cursor: pointer;
+    transition: all .3s linear;
+
+    &:hover {
+        background: $white;
+        color: $blue;
+    }
+
+    &:focus {
+        outline: 1px solid $blue;
+        outline-offset: 2px;
+    }
+}

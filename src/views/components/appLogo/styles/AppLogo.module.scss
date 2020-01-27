@@ -1,0 +1,13 @@
+@import '../../../../sass_modules/all.scss';
+
+.h1 {
+    max-width: 100%;
+    color: $darker-blue;
+    margin-bottom: 15px;
+}
+
+@media(min-width: $small-screen) {
+    .h1 {
+        margin-bottom: 0;
+    }
+}
