@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/property-group-weather/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/property-group-weather/static/js/main.cd86023d.chunk.js",
-    "main.js.map": "/property-group-weather/static/js/main.cd86023d.chunk.js.map",
+    "main.css": "/property-group-weather/static/css/main.bea68d2c.chunk.css",
+    "main.js": "/property-group-weather/static/js/main.04ea6e87.chunk.js",
+    "main.js.map": "/property-group-weather/static/js/main.04ea6e87.chunk.js.map",
     "runtime-main.js": "/property-group-weather/static/js/runtime-main.1560c3fe.js",
     "runtime-main.js.map": "/property-group-weather/static/js/runtime-main.1560c3fe.js.map",
-    "static/js/2.4002711e.chunk.js": "/property-group-weather/static/js/2.4002711e.chunk.js",
-    "static/js/2.4002711e.chunk.js.map": "/property-group-weather/static/js/2.4002711e.chunk.js.map",
+    "static/js/2.4d2886ea.chunk.js": "/property-group-weather/static/js/2.4d2886ea.chunk.js",
+    "static/js/2.4d2886ea.chunk.js.map": "/property-group-weather/static/js/2.4d2886ea.chunk.js.map",
     "index.html": "/property-group-weather/index.html",
-    "precache-manifest.0e0ef3838e4d9c6659de5d1eb8095252.js": "/property-group-weather/precache-manifest.0e0ef3838e4d9c6659de5d1eb8095252.js",
+    "precache-manifest.0e54828a5b55c8200b1245a3f961291b.js": "/property-group-weather/precache-manifest.0e54828a5b55c8200b1245a3f961291b.js",
     "service-worker.js": "/property-group-weather/service-worker.js",
-    "static/css/main.d498bfb3.chunk.css.map": "/property-group-weather/static/css/main.d498bfb3.chunk.css.map",
-    "static/js/2.4002711e.chunk.js.LICENSE": "/property-group-weather/static/js/2.4002711e.chunk.js.LICENSE"
+    "static/css/main.bea68d2c.chunk.css.map": "/property-group-weather/static/css/main.bea68d2c.chunk.css.map",
+    "static/js/2.4d2886ea.chunk.js.LICENSE": "/property-group-weather/static/js/2.4d2886ea.chunk.js.LICENSE",
+    "static/media/main-background-poor.jpg": "/property-group-weather/static/media/main-background-poor.fbadb786.jpg",
+    "static/media/main-background.jpg": "/property-group-weather/static/media/main-background.a86f7f95.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.1560c3fe.js",
-    "static/js/2.4002711e.chunk.js",
-    "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.cd86023d.chunk.js"
+    "static/js/2.4d2886ea.chunk.js",
+    "static/css/main.bea68d2c.chunk.css",
+    "static/js/main.04ea6e87.chunk.js"
   ]
 }
