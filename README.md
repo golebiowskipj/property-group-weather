@@ -1,4 +1,4 @@
-This project is a part of recruitment process.
+This project is a part of a recruitment process.
 
 ## App stack
 * react (with create-react-app and react-app-polyfill)
@@ -24,7 +24,7 @@ The build is minified and the filenames include the hashes.<br />
 
 ## `npm run deploy`
 
-Builds and deploys the up to github-pages. You can access app [here](http://golebiowskipj.github.io/property-group-weather).
+Builds and deploys the app to github-pages. You can access app [here](http://golebiowskipj.github.io/property-group-weather).
 
 ## Credit to
 * creators of images, fonts and other resources
