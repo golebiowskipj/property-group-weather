@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/property-group-weather/static/css/main.d498bfb3.chunk.css",
+    "main.js": "/property-group-weather/static/js/main.cd86023d.chunk.js",
+    "main.js.map": "/property-group-weather/static/js/main.cd86023d.chunk.js.map",
+    "runtime-main.js": "/property-group-weather/static/js/runtime-main.1560c3fe.js",
+    "runtime-main.js.map": "/property-group-weather/static/js/runtime-main.1560c3fe.js.map",
+    "static/js/2.4002711e.chunk.js": "/property-group-weather/static/js/2.4002711e.chunk.js",
+    "static/js/2.4002711e.chunk.js.map": "/property-group-weather/static/js/2.4002711e.chunk.js.map",
+    "index.html": "/property-group-weather/index.html",
+    "precache-manifest.0e0ef3838e4d9c6659de5d1eb8095252.js": "/property-group-weather/precache-manifest.0e0ef3838e4d9c6659de5d1eb8095252.js",
+    "service-worker.js": "/property-group-weather/service-worker.js",
+    "static/css/main.d498bfb3.chunk.css.map": "/property-group-weather/static/css/main.d498bfb3.chunk.css.map",
+    "static/js/2.4002711e.chunk.js.LICENSE": "/property-group-weather/static/js/2.4002711e.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1560c3fe.js",
+    "static/js/2.4002711e.chunk.js",
+    "static/css/main.d498bfb3.chunk.css",
+    "static/js/main.cd86023d.chunk.js"
+  ]
+}
