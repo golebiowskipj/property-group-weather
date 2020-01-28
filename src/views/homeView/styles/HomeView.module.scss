@@ -1,19 +1,36 @@
 @import '../../../sass_modules/all.scss';
 
-.sectionBackground {
+.s_split {
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.s_split__left {
+    width: 100%;
+    height: 100%;
+    background: $bluish; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, $bluish, $redish); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, $bluish, $redish); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.s_split__right {
+    display: none;
+    height: 100%;
+    background-size:cover;
 }
 
 .headersContainer {
     max-width: 100%;
-    background: rgba($black, .3);
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     & h2, & h3 {
         text-align: center;
@@ -31,5 +48,20 @@
         & h3 {
             margin-bottom: 10px;
         }
+    }
+
+    .s_split {
+        flex-direction: row;
+    }
+
+    .s_split__left, .s_split__right {
+        width: 50%;
+        display: flex;
+    }
+
+    .s_split__left {
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
     }
 }

@@ -7,5 +7,4 @@ export interface IInputField {
     width?: string;
     handleOnChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     hasErrors: boolean;
-    errorMessage: string;
 }

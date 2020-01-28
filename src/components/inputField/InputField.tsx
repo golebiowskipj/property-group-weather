@@ -2,7 +2,7 @@ import React from 'react'
 import { IInputField } from './interfaces/IInputField';
 import styles from './styles/InputField.module.scss';
 
-export const InputField = ({ name, type, value, label, placeholder, width, handleOnChange, hasErrors, errorMessage }: IInputField) => {
+export const InputField = ({ name, type, value, label, placeholder, width, handleOnChange, hasErrors }: IInputField) => {
     return (
         <>
             <div className={styles.inputContainer}>
@@ -16,7 +16,6 @@ export const InputField = ({ name, type, value, label, placeholder, width, handl
                     style={{ width: width ? width : '', border: hasErrors ? '1px solid red' : '' }}
                     onChange={handleOnChange}
                 />
-                <p className={`${styles.errorMessage}`} style={{ display: hasErrors ? 'block' : 'none' }}>{errorMessage}</p>
             </div>
 
         </>

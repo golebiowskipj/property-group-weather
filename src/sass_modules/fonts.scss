@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,600|Open+Sans:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,600');
 @import './resolutions.scss';
 
 
@@ -26,10 +26,10 @@
 }
 
 .f-h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 300;
     font-size: 22px;
-    line-height: 26px;
+    line-height: 22px;
 }
 
 .f-h2 {
@@ -45,7 +45,7 @@
 @media(min-width: $tablet) {
     .f-h1 {
         font-size: 36px;
-        line-height: 42px;
+        line-height: 36px;
     }
 
     .f-h2 {

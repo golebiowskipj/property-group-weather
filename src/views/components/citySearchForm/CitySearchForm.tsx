@@ -29,7 +29,7 @@ export class CitySearchForm extends Component {
                     width='250px'
                     handleOnChange={this.handleTextInputChange}
                     hasErrors={false}
-                    errorMessage='City name is required' />
+                />
                 <SubmitButton>
                     Search
                 </SubmitButton>
