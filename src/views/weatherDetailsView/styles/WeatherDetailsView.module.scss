@@ -1,0 +1,9 @@
+@import '../../../sass_modules/all.scss';
+
+.details {
+    @include gradient();
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

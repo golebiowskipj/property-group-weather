@@ -1,10 +1,11 @@
 import React from 'react';
 import { MainView } from './views/MainView';
 
-const App: React.FC = () => {
+const App = () => {
   return (
-      <MainView />
+    <MainView />
   );
 }
 
 export default App;
+

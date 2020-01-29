@@ -3,6 +3,15 @@ import { InputField } from '../../../components/inputField/InputField';
 import styles from './styles/CitySearchForm.module.scss';
 import { SubmitButton } from '../../../components/submitButton/SubmitButton';
 import { historyHelper } from '../../../helpers/historyHelper';
+import { getWeatherForCity, getCompareWeather } from '../../../apiCalls/weatherApi';
+import { connect } from 'react-redux';
+import { AppState } from '../../../store';
+
+import { IReduxCityState } from '../../../store/city/types';
+import { whatCity } from '../../../store/city/actions';
+
+import { IReduxLoadingState } from '../../../store/loading/types';
+import { isLoading } from '../../../store/loading/actions';
 
 interface IState {
     citySearch: string;
@@ -10,7 +19,14 @@ interface IState {
     formValid: boolean;
 }
 
-export class CitySearchForm extends Component<{}, IState> {
+interface ICitySearchFormProps {
+    city: IReduxCityState;
+    loading: IReduxLoadingState;
+    whatCity: typeof whatCity;
+    isLoading: typeof isLoading;
+}
+
+class CitySearchForm extends Component<ICitySearchFormProps, IState> {
     state = {
         citySearch: '',
         cityHasErrors: false,
@@ -41,10 +57,35 @@ export class CitySearchForm extends Component<{}, IState> {
     handleSubmit = (e: React.FormEvent): void => {
         e.preventDefault();
         this.showFormErrors();
-        
+
         if (this.state.formValid) {
-            historyHelper.push(`/city/${this.state.citySearch}`);
+            this.getWeatherForCity(this.state.citySearch);
         }
+    }
+
+    getCompareWeather = async (city: string) => {
+        await getCompareWeather(city)
+            // TODO: ERROR HANDLING, TYPES FOR RESPONSES
+            .catch((error: any) => console.error(error))
+            .then((res: any) => {
+                console.log(res)
+            })
+    }
+
+    getWeatherForCity = async (city: string) => {
+        this.props.isLoading({ loading: true })
+        // TODO: MOVE API KEY TO BACKEND
+        await getWeatherForCity(city)
+            // TODO: ERROR HANDLING, TYPES FOR RESPONSES
+            .catch((error: any) => {
+                console.error(error)
+                this.props.isLoading({ loading: false })
+            })
+            .then((res: any) => {
+                this.props.isLoading({ loading: false })
+                historyHelper.push(`/city/${this.state.citySearch}`);
+                this.getCompareWeather(city)
+            })
     }
 
     render() {
@@ -62,12 +103,21 @@ export class CitySearchForm extends Component<{}, IState> {
                     handleOnChange={this.handleTextInputChange}
                     hasErrors={this.state.cityHasErrors}
                 />
-                <SubmitButton>
+                <SubmitButton
+                    disabled={this.props.loading.loading}
+                >
                     Search
                 </SubmitButton>
-
-
             </form >
         )
     }
 }
+
+const mapStateToProps = (state: AppState) => ({
+    city: state.city,
+    loading: state.loading
+})
+
+export default connect(mapStateToProps, { whatCity, isLoading })(CitySearchForm);
+
+

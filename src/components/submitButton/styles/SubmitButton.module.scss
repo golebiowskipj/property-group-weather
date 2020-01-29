@@ -25,3 +25,8 @@
         outline-offset: 2px;
     }
 }
+
+.button:disabled {
+    background: rgba(0,0,0,.3);
+}
+

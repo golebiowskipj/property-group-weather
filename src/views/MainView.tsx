@@ -6,7 +6,7 @@ import { NotFoundView } from './notFoundView/NotFoundView';
 import { Routes } from '../common/routes';
 import { historyHelper } from '../helpers/historyHelper';
 import styles from './MainView.module.scss';
-import { CitySearchForm } from './components/citySearchForm/CitySearchForm';
+import CitySearchForm from './components/citySearchForm/CitySearchForm';
 import { AppLogo } from './components/appLogo/AppLogo';
 
 
@@ -40,9 +40,8 @@ export class MainView extends Component {
                             <Route exact path={Routes.mainView}>
                                 <HomeView />
                             </Route>
-                            <Route exact path={Routes.weatherDetailsView}>
-                                <WeatherDetailsView />
-                            </Route>
+                            <Route exact path={Routes.weatherDetailsView} render={(params) => <WeatherDetailsView {...params} />} />
+
                             <Route exact path={Routes.cityNotFound}>
                                 <NotFoundView />
                             </Route>

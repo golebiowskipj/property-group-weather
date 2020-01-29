@@ -29,7 +29,7 @@ Builds and deploys the up to github-pages. You can access app [here](http://gole
 ## Credit to
 * creators of images, fonts and other resources
     * [Laura Vinck](https://unsplash.com/@lauravinck?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-* weather api
+* [weather api](https://weatherstack.com/documentation)
 
 
 

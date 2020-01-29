@@ -7,3 +7,9 @@ $background: #fff;
 
 $redish: #89253e;
 $bluish: #3a6186;
+
+@mixin gradient {
+    background: $bluish;
+    background: -webkit-linear-gradient(to left, $bluish, $redish); 
+    background: linear-gradient(to left, $bluish, $redish); 
+}
