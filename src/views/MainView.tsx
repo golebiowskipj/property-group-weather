@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { HomeView } from './homeView/HomeView';
 import { WeatherDetailsView } from './weatherDetailsView/WeatherDetailsView';
-import { NotFoundView } from './notFoundView/NotFoundView';
+import NotFoundView from './notFoundView/NotFoundView';
 import { Routes } from '../common/routes';
 import { historyHelper } from '../helpers/historyHelper';
 import styles from './MainView.module.scss';

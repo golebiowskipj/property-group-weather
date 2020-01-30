@@ -7,11 +7,17 @@ import { getWeatherForCity, getCompareWeather } from '../../../apiCalls/weatherA
 import { connect } from 'react-redux';
 import { AppState } from '../../../store';
 
-import { IReduxCityState } from '../../../store/city/types';
 import { whatCity } from '../../../store/city/actions';
 
 import { IReduxLoadingState } from '../../../store/loading/types';
 import { isLoading } from '../../../store/loading/actions';
+
+
+import { whatWeather } from '../../../store/weather/actions';
+
+import { compareWeather } from '../../../store/weather/actions';
+import { Routes } from '../../../common/routes';
+
 
 interface IState {
     citySearch: string;
@@ -20,10 +26,11 @@ interface IState {
 }
 
 interface ICitySearchFormProps {
-    city: IReduxCityState;
     loading: IReduxLoadingState;
     whatCity: typeof whatCity;
     isLoading: typeof isLoading;
+    whatWeather: typeof whatWeather;
+    compareWeather: typeof compareWeather;
 }
 
 class CitySearchForm extends Component<ICitySearchFormProps, IState> {
@@ -59,6 +66,7 @@ class CitySearchForm extends Component<ICitySearchFormProps, IState> {
         this.showFormErrors();
 
         if (this.state.formValid) {
+            this.props.whatCity({ city: this.state.citySearch });
             this.getWeatherForCity(this.state.citySearch);
         }
     }
@@ -68,12 +76,22 @@ class CitySearchForm extends Component<ICitySearchFormProps, IState> {
             // TODO: ERROR HANDLING, TYPES FOR RESPONSES
             .catch((error: any) => console.error(error))
             .then((res: any) => {
-                console.log(res)
-            })
+                const data = res.current;
+
+                this.props.compareWeather({
+                    temperature: data.temperature,
+                    weather_icons: data.weather_icons,
+                    weather_descriptions: data.weather_descriptions,
+                    feelslike: data.feelslike,
+                    city: res.location.name
+                })
+            }
+            )
     }
 
     getWeatherForCity = async (city: string) => {
         this.props.isLoading({ loading: true })
+        historyHelper.push(`/city/${this.state.citySearch}`);
         // TODO: MOVE API KEY TO BACKEND
         await getWeatherForCity(city)
             // TODO: ERROR HANDLING, TYPES FOR RESPONSES
@@ -82,9 +100,22 @@ class CitySearchForm extends Component<ICitySearchFormProps, IState> {
                 this.props.isLoading({ loading: false })
             })
             .then((res: any) => {
-                this.props.isLoading({ loading: false })
-                historyHelper.push(`/city/${this.state.citySearch}`);
-                this.getCompareWeather(city)
+                this.props.isLoading({ loading: false });
+
+                if (res.success === false) {
+                    historyHelper.push(`${Routes.cityNotFound}`);
+                } else if (res.current) {
+                    const data = res.current;
+
+                    this.props.whatWeather({
+                        temperature: data.temperature,
+                        weather_icons: data.weather_icons,
+                        weather_descriptions: data.weather_descriptions,
+                        feelslike: data.feelslike
+                    });
+
+                    this.getCompareWeather(city);
+                }
             })
     }
 
@@ -114,10 +145,9 @@ class CitySearchForm extends Component<ICitySearchFormProps, IState> {
 }
 
 const mapStateToProps = (state: AppState) => ({
-    city: state.city,
-    loading: state.loading
+    loading: state.loading,
 })
 
-export default connect(mapStateToProps, { whatCity, isLoading })(CitySearchForm);
+export default connect(mapStateToProps, { whatCity, isLoading, whatWeather, compareWeather })(CitySearchForm);
 
 

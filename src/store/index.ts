@@ -1,3 +1,4 @@
+import { weatherReducer, compareWeatherReducer } from './weather/reducers';
 import { loadingReducer } from './loading/reducers';
 import { cityReducer } from './city/reducers';
 import thunkMiddleware from 'redux-thunk';
@@ -7,7 +8,9 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = combineReducers({
     loading: loadingReducer,
-    city: cityReducer
+    city: cityReducer,
+    weather: weatherReducer,
+    compareWeather: compareWeatherReducer
 })
 
 export type AppState = ReturnType<typeof rootReducer>;
