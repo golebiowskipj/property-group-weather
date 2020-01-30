@@ -14,6 +14,7 @@ export class MainView extends Component {
 
     state = {
         height: '100vh',
+        isIE: false,
     }
 
     componentDidMount = () => {
@@ -21,8 +22,9 @@ export class MainView extends Component {
     }
     // TODO: add event listner on window resize (with debouncing) to adjust height without page reload
     calculateMainHeight = () => {
+        const winHeight = window.innerHeight || Math.max(document.documentElement.clientHeight, document.body.clientHeight);
         this.setState({
-            height: `${window.innerHeight - this.heightRef.current!.clientHeight}px`
+            height: `${winHeight - this.heightRef.current!.clientHeight}px`
         })
     }
 

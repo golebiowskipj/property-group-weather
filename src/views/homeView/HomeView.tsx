@@ -3,6 +3,20 @@ import styles from './styles/HomeView.module.scss';
 import bg from '../../images/home-bg.jpg';
 
 export class HomeView extends Component {
+
+    state = {
+        isIE: false,
+    }
+
+    componentDidMount = () => {
+        this.checkIfIsIe();
+    }
+
+    checkIfIsIe = () => {
+        const isEdge = window.navigator.userAgent.indexOf('Edge') !== -1;
+        const isIE = window.navigator.userAgent.indexOf('Trident') !== -1 && !isEdge;
+        this.setState({ isIE });
+    }
     render() {
         return (
             <>
@@ -12,7 +26,7 @@ export class HomeView extends Component {
                         <h2 className={`f-h2`}>Type a city name and check the weather in a second!</h2>
                     </article>
                     {/* TODO: image lazyloading */}
-                    <article className={`${styles.s_split__right}`} style={{backgroundImage: `url(${bg})`}}></article>
+                    <article className={`${styles.s_split__right}`} style={{ backgroundImage: this.state.isIE ? '' : `url(${bg})`}}></article>
                 </section>
             </>
         )

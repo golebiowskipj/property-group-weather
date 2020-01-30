@@ -13,13 +13,13 @@
     width: 100%;
     height: 100%;
     @include gradient;
-
 }
 
 .s_split__right {
     display: none;
     height: 100%;
     background-size:cover;
+    @include reversed-gradient;
 }
 
 .headersContainer {

@@ -13,3 +13,9 @@ $bluish: #3a6186;
     background: -webkit-linear-gradient(to left, $bluish, $redish); 
     background: linear-gradient(to left, $bluish, $redish); 
 }
+
+@mixin reversed-gradient {
+    background: $bluish;
+    background: -webkit-linear-gradient(to right, $bluish, $redish); 
+    background: linear-gradient(to right, $bluish, $redish); 
+}
