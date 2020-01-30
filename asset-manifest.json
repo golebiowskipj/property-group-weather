@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/property-group-weather/static/css/main.bea68d2c.chunk.css",
-    "main.js": "/property-group-weather/static/js/main.04ea6e87.chunk.js",
-    "main.js.map": "/property-group-weather/static/js/main.04ea6e87.chunk.js.map",
+    "main.css": "/property-group-weather/static/css/main.29f709ad.chunk.css",
+    "main.js": "/property-group-weather/static/js/main.d6c3fdf0.chunk.js",
+    "main.js.map": "/property-group-weather/static/js/main.d6c3fdf0.chunk.js.map",
     "runtime-main.js": "/property-group-weather/static/js/runtime-main.1560c3fe.js",
     "runtime-main.js.map": "/property-group-weather/static/js/runtime-main.1560c3fe.js.map",
-    "static/js/2.4d2886ea.chunk.js": "/property-group-weather/static/js/2.4d2886ea.chunk.js",
-    "static/js/2.4d2886ea.chunk.js.map": "/property-group-weather/static/js/2.4d2886ea.chunk.js.map",
+    "static/js/2.cd79097b.chunk.js": "/property-group-weather/static/js/2.cd79097b.chunk.js",
+    "static/js/2.cd79097b.chunk.js.map": "/property-group-weather/static/js/2.cd79097b.chunk.js.map",
     "index.html": "/property-group-weather/index.html",
-    "precache-manifest.0e54828a5b55c8200b1245a3f961291b.js": "/property-group-weather/precache-manifest.0e54828a5b55c8200b1245a3f961291b.js",
+    "precache-manifest.c64d14a3146ce7496d42344a85771053.js": "/property-group-weather/precache-manifest.c64d14a3146ce7496d42344a85771053.js",
     "service-worker.js": "/property-group-weather/service-worker.js",
-    "static/css/main.bea68d2c.chunk.css.map": "/property-group-weather/static/css/main.bea68d2c.chunk.css.map",
-    "static/js/2.4d2886ea.chunk.js.LICENSE": "/property-group-weather/static/js/2.4d2886ea.chunk.js.LICENSE",
-    "static/media/main-background-poor.jpg": "/property-group-weather/static/media/main-background-poor.fbadb786.jpg",
-    "static/media/main-background.jpg": "/property-group-weather/static/media/main-background.a86f7f95.jpg"
+    "static/css/main.29f709ad.chunk.css.map": "/property-group-weather/static/css/main.29f709ad.chunk.css.map",
+    "static/js/2.cd79097b.chunk.js.LICENSE": "/property-group-weather/static/js/2.cd79097b.chunk.js.LICENSE",
+    "static/media/home-bg.jpg": "/property-group-weather/static/media/home-bg.1cdffe7f.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.1560c3fe.js",
-    "static/js/2.4d2886ea.chunk.js",
-    "static/css/main.bea68d2c.chunk.css",
-    "static/js/main.04ea6e87.chunk.js"
+    "static/js/2.cd79097b.chunk.js",
+    "static/css/main.29f709ad.chunk.css",
+    "static/js/main.d6c3fdf0.chunk.js"
   ]
 }
