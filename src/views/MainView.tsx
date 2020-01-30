@@ -46,7 +46,7 @@ export class MainView extends Component {
                             <Route exact path={Routes.cityNotFound}>
                                 <NotFoundView />
                             </Route>
-                            <Redirect from="*" to={Routes.mainView} />
+                            <Redirect from="*" to={Routes.cityNotFound} />
                         </Switch>
                     </Router>
                 </main>
