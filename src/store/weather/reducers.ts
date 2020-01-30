@@ -1,10 +1,10 @@
 import { IReduxWeatherState, WEATHER, WeatherActionTypes, IReduxCompareWeatherState, COMPARE_WEATHER, CompareWeatherActionTypes } from './types';
 
 const initialState: IReduxWeatherState = {
-    temperature: 0,
+    temperature: undefined,
     weather_icons: [],
     weather_descriptions: [],
-    feelslike: 0
+    feelslike: undefined
 }
 
 const initialCompareState: IReduxCompareWeatherState = {

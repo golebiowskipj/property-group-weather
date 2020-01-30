@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Router, Switch, Route, Redirect } from 'react-router-dom';
 import { HomeView } from './homeView/HomeView';
-import { WeatherDetailsView } from './weatherDetailsView/WeatherDetailsView';
+import WeatherDetailsView from './weatherDetailsView/WeatherDetailsView';
 import NotFoundView from './notFoundView/NotFoundView';
 import { Routes } from '../common/routes';
 import { historyHelper } from '../helpers/historyHelper';
 import styles from './MainView.module.scss';
 import CitySearchForm from './components/citySearchForm/CitySearchForm';
 import { AppLogo } from './components/appLogo/AppLogo';
-
 
 export class MainView extends Component {
     private heightRef = React.createRef<HTMLDivElement>();

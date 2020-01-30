@@ -6,34 +6,16 @@ import { historyHelper } from '../../../helpers/historyHelper';
 import { getWeatherForCity, getCompareWeather } from '../../../apiCalls/weatherApi';
 import { connect } from 'react-redux';
 import { AppState } from '../../../store';
-
 import { whatCity } from '../../../store/city/actions';
-
-import { IReduxLoadingState } from '../../../store/loading/types';
 import { isLoading } from '../../../store/loading/actions';
-
-
 import { whatWeather } from '../../../store/weather/actions';
-
 import { compareWeather } from '../../../store/weather/actions';
 import { Routes } from '../../../common/routes';
+import { ICitySearchFormProps } from './interfaces/ICitySearchFormProps';
+import { ICitySearchFormState } from './interfaces/ICitySearchFormState';
 
 
-interface IState {
-    citySearch: string;
-    cityHasErrors: boolean;
-    formValid: boolean;
-}
-
-interface ICitySearchFormProps {
-    loading: IReduxLoadingState;
-    whatCity: typeof whatCity;
-    isLoading: typeof isLoading;
-    whatWeather: typeof whatWeather;
-    compareWeather: typeof compareWeather;
-}
-
-class CitySearchForm extends Component<ICitySearchFormProps, IState> {
+class CitySearchForm extends Component<ICitySearchFormProps, ICitySearchFormState> {
     state = {
         citySearch: '',
         cityHasErrors: false,
@@ -76,6 +58,7 @@ class CitySearchForm extends Component<ICitySearchFormProps, IState> {
             // TODO: ERROR HANDLING, TYPES FOR RESPONSES
             .catch((error: any) => console.error(error))
             .then((res: any) => {
+                this.props.isLoading({ loading: false });
                 const data = res.current;
 
                 this.props.compareWeather({
@@ -100,8 +83,6 @@ class CitySearchForm extends Component<ICitySearchFormProps, IState> {
                 this.props.isLoading({ loading: false })
             })
             .then((res: any) => {
-                this.props.isLoading({ loading: false });
-
                 if (res.success === false) {
                     historyHelper.push(`${Routes.cityNotFound}`);
                 } else if (res.current) {

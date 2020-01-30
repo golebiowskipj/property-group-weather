@@ -3,6 +3,6 @@ import styles from './styles/AppLogo.module.scss';
 
 export const AppLogo = () => {
     return (
-        <h1 className={`f-h1 ${styles.h1}`}>Property Group weather</h1>
+        <a href='/' className={`f-h1 ${styles.h1}`}>Property Group weather</a>
     )
 }

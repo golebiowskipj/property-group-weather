@@ -3,8 +3,13 @@ import { connect } from 'react-redux';
 import { AppState } from '../../store';
 import { INotFoundViewProps } from './interfaces/INotFoundViewProps';
 import styles from './styles/NotFoundView.module.scss';
+import { isLoading } from '../../store/loading/actions';
 
 class NotFoundView extends Component<INotFoundViewProps> {
+    componentDidMount = () => {
+        this.props.isLoading({ loading: false })
+    }
+
     render() {
         return (
             <section className={styles.notFoundView}>
@@ -22,4 +27,4 @@ const mapStateToProps = (state: AppState) => ({
     loading: state.loading
 })
 
-export default connect(mapStateToProps)(NotFoundView);
+export default connect(mapStateToProps, { isLoading })(NotFoundView);

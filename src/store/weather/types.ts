@@ -1,8 +1,8 @@
 export interface IReduxWeatherState {
-    temperature: number;
+    temperature?: number;
     weather_icons: string[];
     weather_descriptions: string[];
-    feelslike: number;
+    feelslike?: number;
 }
 export interface IReduxCompareWeatherState extends IReduxWeatherState {
     city: string;

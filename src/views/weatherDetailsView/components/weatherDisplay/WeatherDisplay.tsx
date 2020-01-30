@@ -1,43 +1,32 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import { AppState } from '../../../../store';
-import { IReduxLoadingState } from '../../../../store/loading/types';
-import { IReduxCityState } from '../../../../store/city/types';
-import { IReduxWeatherState, IReduxCompareWeatherState } from '../../../../store/weather/types';
 import { Loader } from '../../../components/loader/Loader';
+import styles from './styles/WeatherDisplay.module.scss';
+import { IWeatherDisplayProps } from './interfaces/IWeatherDisplayProps';
 
-
-interface IWeatherDisplayProps {
-    loading: IReduxLoadingState;
-    city: IReduxCityState;
-    weather: IReduxWeatherState;
-    compareWeather: IReduxCompareWeatherState;
-}
-
-
-class WeatherDisplay extends Component<IWeatherDisplayProps> {
+export class WeatherDisplay extends Component<IWeatherDisplayProps> {
     render() {
         return (
-            <div>
-                {this.props.loading.loading ?
+            <div className={styles.weatherDisplay}>
+                {this.props.loading ?
                     <Loader />
                     :
-                    <div>{this.props.weather.feelslike}</div>
+                    <>
+                        <div className={styles.weatherDisplay__table}>
+                            <h6 className={`f-text ${styles.weatherDisplay__header}`}>{this.props.city.toUpperCase()}</h6>
+                            <p className={`f-text ${styles.weatherDisplay__descr}`}>{this.props.description}</p>
+                            {this.props.temperature
+                                ?
+                                <p className={`f-text ${styles.weatherDisplay_temp}`}>{this.props.temperature}&deg;C (feels like {this.props.feelslike}&deg;C )</p>
+                                :
+                                <p></p>
+                            }
+                        </div>
+                        <img className={styles.weatherDisplay__icon} src={this.props.icon} alt={this.props.description} />
+                    </>
                 }
             </div>
         )
     }
 }
-
-const mapStateToProps = (state: AppState) => ({
-    loading: state.loading,
-    city: state.city,
-    weather: state.weather,
-    compareWeather: state.compareWeather
-})
-
-
-export default connect(mapStateToProps)(WeatherDisplay);
-
 
 
