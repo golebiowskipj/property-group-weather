@@ -1,5 +1,7 @@
 This project is a part of recruitment process.
 
+[Live](https://golebiowskipj.github.io/property-group-weather)
+
 ## App stack
 * react (with create-react-app and react-app-polyfill)
 * react-router-dom
